@@ -31,9 +31,9 @@ router.get('/edit/:id', (req, res) => {
   });
 })
 
-router.post('/edit/:id', (req, res) =>{
+router.post('/edit/:id', (req, res) => {
   const id = req.params.id;
-  taskscollection.findByIdandUpdate(id, {
+  taskscollection.findByIdAndUpdate(id, {
     content: req.body.task
   }, err => {
     if(err) {
@@ -45,9 +45,9 @@ router.post('/edit/:id', (req, res) =>{
   });
 });
 
-router.get('/remove:id', (req, res) => {
+router.get('/remove/:id', (req, res) => {
   const id = req.params.id;
-  taskscollection.findByIdandRemove(id, err => {
+  taskscollection.findByIdAndRemove(id, err => {
     if (err) {
       res.send('ERROR OCCURED');
     }
